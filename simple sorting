@@ -1,0 +1,15 @@
+algorithm tri_simple
+VAR
+arr : ARRAY_OF INTEGER[n];
+i: INTEGER;
+j: INTEGER;
+BEGIN
+FOR i FROM 0 TO n-2 STEP 1
+id-min:=i;
+FOR j FROM n-2-i TO i STEP -1
+IF (arr[j]<arr[id-min]) THEN
+id-min:=j;
+end-if 
+end-for 
+END-FOR
+END

@@ -1,0 +1,52 @@
+/*first and last occurence of X in T*/
+/*si le tableau est random*/
+function indices-x( T:ARRAY_OF Float[M], X: float): pos1,pos2: INTEGER
+VAR
+pos1:integer:=1;
+pos2:integer:=T.length;
+i, j:integer;
+BEGIN
+while (T[i]<>X and i<M)
+i=i+1;
+end-while
+pos1:=i;
+j:=M;
+Repeat 
+j:=j-1;
+UNTIL(T[j]=X)
+pos2:=j;
+if (pos1:=1 and pos2:=M) then
+return ('the position is' -1);
+else
+return(pos1);
+return(pos2);
+end-if
+END
+
+/*si le tableau est en ordre croissant*/
+function indices-x( T:ARRAY_OF Float[M], X: float): pos1,pos2: INTEGER
+VAR
+pos1:INTEGER:=1;
+pos2:INTEGER:=M;
+BEGIN
+if (X>=T[1] and x<=T[M])then
+Repeat
+pos1=pos1+1;
+pos2=pos2-1;
+UNTIL(T[pos1]=X or T[pos2]=X )
+return(pos1);
+return(pos2);
+else
+return(-1);
+end-if
+END
+/*++++++++++++++++++++++++++++++++++++++++++++*/
+algorithm recherche-pos
+VAR
+T:ARRAY_OF Float[M];
+X:float;
+BEGIN
+READ(T);
+READ(X);
+Print(indices-x(T,X));
+END

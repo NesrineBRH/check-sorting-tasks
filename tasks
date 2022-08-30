@@ -1,0 +1,19 @@
+/*Task 1: longest substring*/
+algorithm tri_simple
+VAR
+chaine: STRING(n);
+k: INTEGER;
+BEGIN
+READ(chaine);
+READ(k);
+n:integer:=chaine.length;
+FOR i FROM 1 TO n-k+1 STEP 1
+j:=i;
+while (j<n-k+1)
+IF (chaine[i]=chaine[j]) THEN
+j:=j+1; 
+end-if 
+
+end-while 
+END-FOR
+END

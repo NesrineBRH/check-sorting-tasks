@@ -1,0 +1,19 @@
+/*closest sum to 0*/
+algorithm somme-zero
+VAR
+tab:=ARRAY_OF-integer[m];
+somme: INTEGER
+i:INTEGER;
+BEGIN
+READ(tab);
+n:integer:=chaine.length;
+somme=tab[1]-tab[2];
+FOR i FROM 1 TO n STEP 1
+FOR j FROM i+1 TO n STEP 1
+IF (tab[i]-tab[j]<somme AND tab[i]-tab[j]>0) THEN
+somme:=tab[i]-tab[j]; 
+end-if 
+end-FOR 
+END-FOR
+Print(somme);
+END

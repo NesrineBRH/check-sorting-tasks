@@ -1,0 +1,51 @@
+/*nombre lettres, nombre et symboles*/
+function is-separator(chara):boolean 
+VAR
+chara:char;
+BEGIN
+if (charCode(chara)>32 and charCode(chara)<127)
+return true;
+end-if
+END
+/*+++++++++++++++++++++++++*/
+function is-letter(chara):boolean 
+VAR
+chara:char;
+BEGIN
+if (charCode(chara)>=65 and charCode(chara)<=90  and charCode(chara)>=97 and charCode(chara)<=122)
+return true;
+end-if
+END
+/*+++++++++++++++++++++++++*/
+function is-digits(chara):boolean 
+VAR
+chara:char;
+BEGIN
+if (charCode(chara)>=48 and charCode(chara)<=57)
+return true;
+end-if
+END
+/*+++++++++++++++++++++++++*/
+algorithm compteur
+VAR
+phrase:string(n);
+separator:INTEGER:=0;
+digits:INTEGER:=0;
+letter:INTEGER:=0;
+i:INTEGER;
+BEGIN
+READ(phrase);
+n:integer:=phrase.length;
+FOR i FROM 1 TO n STEP 1
+if (is-letter(phrase[i])) then
+letter:=lettre+1;
+else if(is-separator(phrase[i])) then
+ separator:=separator+1;
+ else if(is-digits(phrase[i])) then
+ digits:=digits+1;
+end-if
+END-FOR
+Print('nombre de lettre' letter.length);
+Print('nombre de digits' digits.length);
+Print('nombre de espaces' separator.length);
+END
